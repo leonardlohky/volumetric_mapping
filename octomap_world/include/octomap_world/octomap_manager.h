@@ -132,6 +132,7 @@ class OctomapManager : public OctomapWorld {
   std::string robot_frame_;
   // Whether to use TF transform resolution (true) or fixed transforms from
   // parameters and transform topics (false).
+  bool ignore_timestamp_mismatch_;
   bool use_tf_transforms_;
   int64_t timestamp_tolerance_ns_;
   // B is the body frame of the robot, C is the camera/sensor frame creating
