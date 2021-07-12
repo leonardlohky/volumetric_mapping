@@ -9,6 +9,8 @@ A repository for 3D volumetric (occupancy) maps, providing a generic interface f
 **octomap_world** - an octomap-based volumetric representation, both with a library and a stand-alone ROS node.
 
 ## Dependencies
+OpenCV is required for this package to work, installation of this package was tested with OpenCV version 3.4.14. See instructions on how to install OpenCV on Ubuntu system
+
 In addition to `ros-indigo-desktop-full`, please install:
 ```
 sudo apt-get install ros-indigo-octomap-mapping
@@ -37,6 +39,19 @@ wstool update
 ```
 
 On Mac OS X, see the [mav_tools Wiki instructions](https://github.com/ethz-asl/mav_tools/wiki/Install-the-ASL-MAV-framework#install-extra-stock-ros-packages-octomap-ompl-etc).
+
+## Installation
+Assuming SegMap and its workspace is already installed, most of the required dependencies should already be in the ~/segmap_ws/src folder. So, the package can be simply git cloned into the ~/segmap_ws/src folder
+```
+cd ~/segmap_ws/src/
+git clone https://github.com/leonardlohky/volumetric_mapping
+```
+
+After that, build the package using catkin build
+```
+cd ~/segmap_ws
+catkin build volumetric_mapping
+```
 
 ## Libraries
 **[OctomapWorld](https://github.com/ethz-asl/volumetric_mapping/blob/master/octomap_world/include/octomap_world/octomap_world.h)** - general library for handling insertion of pointclouds, can be run outside of a ROS node, and takes parameters as a struct.
